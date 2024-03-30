@@ -4,6 +4,7 @@ import { Product } from "apps/commerce/types.ts";
 import { formatPrice } from "$site/sdk/format.ts";
 import { useOffer } from "$site/sdk/useOffer.ts";
 import { clx } from "deco-sites/camp-eva/sdk/clx.ts";
+import LikeButton from "deco-sites/camp-eva/islands/LikeButton.tsx";
 
 interface HorizontalProductCardProps {
   product: Product;
@@ -26,7 +27,7 @@ export const HorizontalProductCard = ({
   const [image] = images ?? [];
 
   return (
-    <div class="grid grid-cols-[2fr_3fr] border border-neutral p-2 gap-2 max-sm:flex-col w-full rounded">
+    <div class="grid grid-cols-[2fr_3fr] border border-neutral p-2 gap-2 max-sm:flex-col w-full rounded relative">
       {image.url && (
         <div class="aspect-square h-full overflow-hidden">
           <Image
@@ -42,7 +43,7 @@ export const HorizontalProductCard = ({
           />
         </div>
       )}
-      <div class="px-2 flex flex-col self-stretch">
+      <div class="px-2 flex flex-col self-stretch ">
         <h2 class="text-lg line-clamp-1">{name}</h2>
         <p class="mb-auto text-sm line-clamp-1">{description}</p>
         <div class="mb-2">
@@ -62,6 +63,7 @@ export const HorizontalProductCard = ({
             seller={seller ?? "1"}
           />
         )}
+        <LikeButton productID={productID} />
       </div>
     </div>
   );
