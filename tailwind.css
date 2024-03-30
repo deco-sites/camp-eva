@@ -20,6 +20,10 @@
     margin: 0;
   }
 
+  .container {
+    @apply px-4;
+  }
+
   /* Disable scroll once drawer/modal is openned */
   body:has(.drawer-toggle:checked),
   body:has(.modal-toggle:checked) {
