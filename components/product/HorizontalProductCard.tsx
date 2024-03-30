@@ -23,12 +23,12 @@ export const HorizontalProductCard = ({
   const [image] = images ?? [];
 
   return (
-    <div class="flex border border-neutral p-2 gap-2 max-sm:flex-col">
+    <div class="flex border border-neutral p-2 gap-2 max-sm:flex-col max-w-xl">
       {image.url && (
         <Image
           src={image.url}
-          width={200}
-          height={200}
+          width={208}
+          height={208}
           loading="lazy"
           alt={name}
         />
