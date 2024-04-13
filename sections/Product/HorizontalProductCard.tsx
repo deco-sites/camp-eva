@@ -4,6 +4,7 @@ import type { Product } from "apps/commerce/types.ts";
 import { HorizontalProductCard } from "$site/components/product/HorizontalProductCard.tsx";
 import { asset } from "$fresh/runtime.ts";
 import { clx } from "deco-sites/camp-eva/sdk/clx.ts";
+import type { ProductCardFlagProps } from "$site/flags/multivariate/ProductCardFlag.ts";
 
 export type maxWidth =
   | "max-w-xl"
@@ -21,7 +22,7 @@ export interface HorizontalProductCardPropsLayout {
 }
 
 export interface HorizontalProductSectionProps {
-  products: Product[] | null;
+  products: ProductCardFlagProps;
   layout: HorizontalProductCardPropsLayout;
 }
 

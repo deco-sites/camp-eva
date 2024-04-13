@@ -4,9 +4,13 @@ import { Context } from "deco/deco.ts";
 import Theme from "../sections/Theme/Theme.tsx";
 
 const sw = () =>
-  addEventListener("load", () =>
-    navigator && navigator.serviceWorker &&
-    navigator.serviceWorker.register("/sw.js"));
+  addEventListener(
+    "load",
+    () =>
+      navigator &&
+      navigator.serviceWorker &&
+      navigator.serviceWorker.register("/sw.js")
+  );
 
 export default defineApp(async (_req, ctx) => {
   const revision = await Context.active().release?.revision();
@@ -29,6 +33,10 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+        <link
+          rel="stylesheet"
+          href="https://esm.sh/react-toastify@9.1.1/dist/ReactToastify.css"
+        />
       </Head>
 
       {/* Rest of Preact tree */}

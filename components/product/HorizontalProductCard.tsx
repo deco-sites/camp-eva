@@ -1,6 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
-import { Product } from "apps/commerce/types.ts";
+import { Product, ProductDetailsPage } from "apps/commerce/types.ts";
 import { formatPrice } from "$site/sdk/format.ts";
 import { useOffer } from "$site/sdk/useOffer.ts";
 import { clx } from "deco-sites/camp-eva/sdk/clx.ts";

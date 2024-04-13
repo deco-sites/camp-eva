@@ -5,12 +5,14 @@
 import * as $$$$$$$$$0 from "./actions/sendLike.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
+import * as $$$$$$$$0 from "./flags/multivariate/ProductCardFlag.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
 import * as $$$3 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$1 from "./loaders/List/Sections.tsx";
 import * as $$$4 from "./loaders/totalLikes.ts";
 import * as $$$5 from "./loaders/totalLikesProduct.ts";
+import * as $$$$$$$0 from "./matchers/utm.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/Cards/IconCardsCarousel.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarouselWithImage.tsx";
@@ -126,6 +128,12 @@ const manifest = {
     "deco-sites/camp-eva/sections/Social/InstagramPosts.tsx": $$$$$$48,
     "deco-sites/camp-eva/sections/Social/WhatsApp.tsx": $$$$$$49,
     "deco-sites/camp-eva/sections/Theme/Theme.tsx": $$$$$$50,
+  },
+  "matchers": {
+    "deco-sites/camp-eva/matchers/utm.ts": $$$$$$$0,
+  },
+  "flags": {
+    "deco-sites/camp-eva/flags/multivariate/ProductCardFlag.ts": $$$$$$$$0,
   },
   "actions": {
     "deco-sites/camp-eva/actions/sendLike.ts": $$$$$$$$$0,
