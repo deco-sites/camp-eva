@@ -17,7 +17,8 @@ function LikeButton({ productID }: LikeButtonProps) {
   const quantity = useSignal(0);
   const id = useId();
 
-  const Toast = ToastContainer as any;
+  // @ts-ignore - this is a valid import
+  const Toast = ToastContainer as ComponentType;
 
   const updateTotals = async () => {
     const totalLikes = await invoke["deco-sites/camp-eva"].loaders.totalLikes();
@@ -83,11 +84,9 @@ function LikeButton({ productID }: LikeButtonProps) {
           },
         }}
       />
-      {!selected.value ? (
-        <Icon id="MoodSmile" width={24} height={24} />
-      ) : (
-        <Icon id="MoodCheck" width={24} height={24} />
-      )}
+      {!selected.value
+        ? <Icon id="MoodSmile" width={24} height={24} />
+        : <Icon id="MoodCheck" width={24} height={24} />}
       <span
         class={`min-w-4 text-center text-xs font-thin ${
           !selected.value ? "" : "text-primary"

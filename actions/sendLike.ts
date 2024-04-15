@@ -7,7 +7,7 @@ export interface sendLikesActionProps {
 export default async function sendLikesAction(
   props: sendLikesActionProps,
   _req: Request,
-  ctx: AppContext
+  ctx: AppContext,
 ) {
   const data = { productId: props.productID };
 

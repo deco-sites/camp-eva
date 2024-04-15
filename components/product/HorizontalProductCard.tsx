@@ -34,7 +34,7 @@ export const HorizontalProductCard = ({
             src={image.url}
             class={clx(
               "h-full w-full",
-              zoomOnHover && "hover:scale-110 h-full w-full transition"
+              zoomOnHover && "hover:scale-110 h-full w-full transition",
             )}
             width={208}
             height={208}

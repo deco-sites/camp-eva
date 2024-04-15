@@ -9,7 +9,7 @@ const sw = () =>
     () =>
       navigator &&
       navigator.serviceWorker &&
-      navigator.serviceWorker.register("/sw.js")
+      navigator.serviceWorker.register("/sw.js"),
   );
 
 export default defineApp(async (_req, ctx) => {

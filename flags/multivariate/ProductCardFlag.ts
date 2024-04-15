@@ -8,7 +8,7 @@ import { MultivariateFlag } from "deco/blocks/flag.ts";
 export type ProductCardFlagProps = Product[] | null;
 
 export default function productCardFlag(
-  props: MultivariateProps<ProductCardFlagProps>
+  props: MultivariateProps<ProductCardFlagProps>,
 ): MultivariateFlag<ProductCardFlagProps> {
   return multivariate(props);
 }

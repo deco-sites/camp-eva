@@ -42,7 +42,7 @@ const HorizontalProductSection = ({
     <div
       class={clx(
         "container flex items-center justify-center gap-x-4 flex-wrap h-full py-4",
-        layout.larguraMax
+        layout.larguraMax,
       )}
     >
       {products.map((product) => (

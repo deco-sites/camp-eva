@@ -7,7 +7,7 @@ export interface totalLikesProductLoaderProps {
 export default async function totalLikesProductLoader(
   props: totalLikesProductLoaderProps,
   _req: Request,
-  ctx: AppContext
+  ctx: AppContext,
 ) {
   const response = await fetch(
     `https://camp-api.deco.cx/event/${props.productID}`,
@@ -17,7 +17,7 @@ export default async function totalLikesProductLoader(
         "Content-Type": "application/json",
         "x-api-key": String(ctx.secretLikes.get()),
       },
-    }
+    },
   );
 
   return response.json();

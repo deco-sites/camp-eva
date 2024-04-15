@@ -89,13 +89,11 @@ function ProductCard({
       <li>
         <a href={relativeLink}>
           <Avatar
-            variant={
-              relativeLink === relativeUrl
-                ? "active"
-                : relativeLink
-                ? "default"
-                : "disabled"
-            }
+            variant={relativeLink === relativeUrl
+              ? "active"
+              : relativeLink
+              ? "default"
+              : "disabled"}
             content={value}
           />
         </a>
@@ -119,9 +117,9 @@ function ProductCard({
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
-          l?.onMouseOver?.card === "Move up" &&
-          "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
-        }
+        l?.onMouseOver?.card === "Move up" &&
+        "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
+      }
       `}
       data-deco="view-product"
     >
@@ -151,10 +149,10 @@ function ProductCard({
         <div
           class={`absolute top-2 z-10 flex items-center
             ${
-              l?.elementsPositions?.favoriteIcon === "Top left"
-                ? "left-2"
-                : "right-2"
-            }
+            l?.elementsPositions?.favoriteIcon === "Top left"
+              ? "left-2"
+              : "right-2"
+          }
             
           `}
         >
@@ -247,66 +245,76 @@ function ProductCard({
         {(!l?.elementsPositions?.skuSelector ||
           l?.elementsPositions?.skuSelector === "Top") && (
           <>
-            {l?.hide?.skuSelector ? (
-              ""
-            ) : (
-              <ul
-                class={`flex items-center gap-2 w-full overflow-auto p-3 ${
-                  align === "center" ? "justify-center" : "justify-start"
-                } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
-              >
-                {skuSelector}
-              </ul>
-            )}
+            {l?.hide?.skuSelector
+              ? (
+                ""
+              )
+              : (
+                <ul
+                  class={`flex items-center gap-2 w-full overflow-auto p-3 ${
+                    align === "center" ? "justify-center" : "justify-start"
+                  } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
+                >
+                  {skuSelector}
+                </ul>
+              )}
           </>
         )}
 
-        {l?.hide?.productName && l?.hide?.productDescription ? (
-          ""
-        ) : (
-          <div class="flex flex-col gap-0">
-            {l?.hide?.productName ? (
-              ""
-            ) : (
-              <h2
-                class="truncate text-base lg:text-lg text-base-content uppercase font-normal"
-                dangerouslySetInnerHTML={{ __html: name ?? "" }}
-              />
-            )}
-            {l?.hide?.productDescription ? (
-              ""
-            ) : (
+        {l?.hide?.productName && l?.hide?.productDescription
+          ? (
+            ""
+          )
+          : (
+            <div class="flex flex-col gap-0">
+              {l?.hide?.productName
+                ? (
+                  ""
+                )
+                : (
+                  <h2
+                    class="truncate text-base lg:text-lg text-base-content uppercase font-normal"
+                    dangerouslySetInnerHTML={{ __html: name ?? "" }}
+                  />
+                )}
+              {l?.hide?.productDescription
+                ? (
+                  ""
+                )
+                : (
+                  <div
+                    class="truncate text-sm lg:text-sm text-neutral"
+                    dangerouslySetInnerHTML={{ __html: description ?? "" }}
+                  />
+                )}
+            </div>
+          )}
+        {l?.hide?.allPrices
+          ? (
+            ""
+          )
+          : (
+            <div class="flex flex-col gap-2">
               <div
-                class="truncate text-sm lg:text-sm text-neutral"
-                dangerouslySetInnerHTML={{ __html: description ?? "" }}
-              />
-            )}
-          </div>
-        )}
-        {l?.hide?.allPrices ? (
-          ""
-        ) : (
-          <div class="flex flex-col gap-2">
-            <div
-              class={`flex flex-col gap-0 ${
-                l?.basics?.oldPriceSize === "Normal"
-                  ? "lg:flex-row-reverse lg:gap-2"
-                  : ""
-              } ${align === "center" ? "justify-center" : "justify-end"}`}
-            >
-              <div
-                class={`line-through text-base-300 text-xs font-light ${
-                  l?.basics?.oldPriceSize === "Normal" ? "lg:text-sm" : ""
-                }`}
+                class={`flex flex-col gap-0 ${
+                  l?.basics?.oldPriceSize === "Normal"
+                    ? "lg:flex-row-reverse lg:gap-2"
+                    : ""
+                } ${align === "center" ? "justify-center" : "justify-end"}`}
               >
-                {formatPrice(listPrice, offers?.priceCurrency)}
-              </div>
-              <div class="text-base-content lg:text-sm font-light">
-                {formatPrice(price, offers?.priceCurrency)}
+                <div
+                  class={`line-through text-base-300 text-xs font-light ${
+                    l?.basics?.oldPriceSize === "Normal" ? "lg:text-sm" : ""
+                  }`}
+                >
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </div>
+                <div class="text-base-content lg:text-sm font-light">
+                  {formatPrice(price, offers?.priceCurrency)}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
         {/* SKU Selector */}
         {l?.elementsPositions?.skuSelector === "Bottom" && (
@@ -316,36 +324,42 @@ function ProductCard({
                 align === "center" ? "justify-center" : "justify-between"
               } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
             >
-              {l?.hide?.installments ? (
-                ""
-              ) : (
-                <li>
-                  <span class="text-base-300 font-light text-sm truncate">
-                    ou {installments}
-                  </span>
-                </li>
-              )}
-              {l?.hide?.skuSelector ? (
-                ""
-              ) : (
-                <li>
-                  <ul class="flex items-center gap-2">{skuSelector}</ul>
-                </li>
-              )}
+              {l?.hide?.installments
+                ? (
+                  ""
+                )
+                : (
+                  <li>
+                    <span class="text-base-300 font-light text-sm truncate">
+                      ou {installments}
+                    </span>
+                  </li>
+                )}
+              {l?.hide?.skuSelector
+                ? (
+                  ""
+                )
+                : (
+                  <li>
+                    <ul class="flex items-center gap-2">{skuSelector}</ul>
+                  </li>
+                )}
             </ul>
           </>
         )}
-        {!l?.hide?.cta ? (
-          <div
-            class={`flex-auto flex items-end ${
-              l?.onMouseOver?.showCta ? "lg:hidden" : ""
-            }`}
-          >
-            {cta}
-          </div>
-        ) : (
-          ""
-        )}
+        {!l?.hide?.cta
+          ? (
+            <div
+              class={`flex-auto flex items-end ${
+                l?.onMouseOver?.showCta ? "lg:hidden" : ""
+              }`}
+            >
+              {cta}
+            </div>
+          )
+          : (
+            ""
+          )}
       </div>
     </div>
   );
